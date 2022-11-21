@@ -18,5 +18,12 @@ namespace SampleExport.Models
 
         [DataMember(Name = "qty")]
         public int Quantity { get; set; }
+
+        public Product(Guid id, decimal price, int quantity)
+        {
+            Id = id;
+            Price = price;
+            Quantity = quantity;
+        }
     }
 }
