@@ -1,4 +1,5 @@
 ﻿using SampleExport.Models;
+using DataExport = SmartR.DataExport;
 
 Console.WriteLine("This is a sample project to test our SmartR-Export nuget package");
 
@@ -29,13 +30,13 @@ var productList = new List<Product> {
 
 try
 {
-    var fileName = SmartR.DataExport.ConvertToJsonFile(productList, string.Empty, "ProductList");
+    var fileName = DataExport.ConvertToJsonFile(productList, string.Empty, "ProductList");
 
     Console.WriteLine("Compressing file to gzip");
-    SmartR.DataExport.CompressFileToGzip(fileName);
+    DataExport.CompressFileToGzip(fileName);
 
     Console.WriteLine("Generating md5 hash for the file");
-    var hash = SmartR.DataExport.CalculateMD5Hash(fileName);
+    var hash = DataExport.CalculateMD5Hash(fileName);
 
     Console.WriteLine($"MD5 checksum: {hash}");
 
